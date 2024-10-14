@@ -21,5 +21,21 @@ export async function fetchEvents() {
 
 }
 
+export async function fetchEventsById(id) {
+    try {
+        const response = await instance.get(`events/${id}`)
+        return response.data
+    }
+    catch (error) {
+        if (error.response){
+            console.error("Server responded with an error", error.response.status, error.response.data)
+        } else if (error.request) {
+            console.error("No response recieved", error.request)
+        } else {
+            console.error("Error setting up request", error.message)
+        }
+    }
+}
+
 
 
