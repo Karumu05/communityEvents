@@ -18,11 +18,10 @@ export default function Page() {
     <div className="container mx-auto px-4 py-8 h-full">
       <div className="flex  h-full flex-col sm:flex-row">
         <div className="flex-1 mr-4">
-           
-            <div className="bg-red-400">
-          <h1 className="text-3xl font-bold uppercase ">{eventData.title}</h1>
-          <p className=" ">{eventData.createdBy}</p>
-            </div>
+          <div className="bg-red-400">
+            <h1 className="text-3xl font-bold uppercase ">{eventData.title}</h1>
+            <p className=" ">{eventData.createdBy}</p>
+          </div>
 
           <div className="flex flex-col h-full justify-evenly">
             <div className="mt-14 bg-gray-200 text-4xl rounded-xl h-full flex flex-col justify-center items-center gap-6 ">
