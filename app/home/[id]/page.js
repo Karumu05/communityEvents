@@ -1,5 +1,6 @@
 "use client";
 import { fetchEventsById } from "@/app/lib/data";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -15,51 +16,55 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8 h-full">
-      <div className="flex  h-full flex-col sm:flex-row">
-        <div className="flex-1 mr-4">
-          <div className="bg-red-400">
-            <h1 className="text-3xl font-bold uppercase ">{eventData.title}</h1>
-            <p className=" ">{eventData.createdBy}</p>
-          </div>
+    <>
+      <div class="absolute top-0 w-3/4 h-1/4  "></div>
 
-          <div className="flex flex-col h-full justify-evenly">
-            <div className="mt-14 bg-gray-200 text-4xl rounded-xl h-full flex flex-col justify-center items-center gap-6 ">
-              <p>Date: {formattedDate}</p>
-              <p>Location: {eventData.location}</p>
-              <p>Remaining Tickets: {eventData.ticketAmount}</p>
-            </div>
-            <p className="text-2xl text-center bg-gray-200 mt-4 h-full rounded-xl flex justify-center items-center">
-              {eventData.description}
-            </p>
+      <div className="grid grid-cols-2 grid-rows-3 gap-4 h-full pr-6 ">
+        <div className="bg-gradient-to-r from-red-400 col-span-1 flex flex-col justify-center pl-6 ">
+          <h1 className="text-7xl font-bold uppercase ">{eventData.title}</h1>
+          <p className="text-3xl font-semibold pl-2 italics">
+            {eventData.createdBy}
+          </p>
+        </div>
+
+        <div className="row-span-2 p-6">
+        <Image src={eventData.image} height={500} width={500} className="w-full h-full"/>
+        </div>
+
+        <div className="bg-gray-200 mx-6 mt-6 rounded-lg flex flex-col   text-4xl ">
+          <p className="shadow-lg p-2">Infomation:</p>
+          <div className="p-6 gap-4 justify-center">
+            <p>Date: {formattedDate}</p>
+            <p>Location: {eventData.location}</p>
+            <p>Remaining Tickets: {eventData.ticketAmount}</p>
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col">
-          <img
-            src={eventData.image}
-            alt={eventData.title}
-            className="w-full h-auto"
-          />
+        <div className="bg-gray-200 mx-6 mb-6 rounded-lg flex flex-col text-3xl ">
+          <p className="shadow-lg p-2">Description:</p>
+          <p className="p-6">{eventData.description}</p>
+        </div>
 
-          <div className="flex flex-col bg-gray-200 mt-4 rounded-xl h-full justify-evenly items-center">
-            <div className="mt-4">
-              <p className="text-3xl ">Attendees:</p>
-              <ul className="list-disc ml-4">{/* List of attendees here */}</ul>
-            </div>
+        <div className="bg-gray-200 m-6 rounded-lg">
+          <div className="mt-4">
+            <p className="text-3xl ">Attendees:</p>
+            <ul className="list-disc ml-4">{/* List of attendees here */}</ul>
+          </div>
 
-            <div className="mt-4">
-              <p className="text-3xl ">Cost: ${eventData.cost}</p>
-            </div>
+          <div className="mt-4">
+            <p className="text-3xl ">Cost: ${eventData.cost}</p>
+          </div>
 
-            <div className="mt-4">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Buy General Admission Ticket
-              </button>
-            </div>
+          <div className="mt-4">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Buy General Admission Ticket
+            </button>
           </div>
         </div>
+
+
+
       </div>
-    </div>
+    </>
   );
 }
