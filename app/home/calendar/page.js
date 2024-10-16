@@ -11,12 +11,14 @@ export default function Page() {
 
 
     return (
-        <FullCalendar 
-        plugins={[dayGridPlugin, InteractionPlugin]}
-        initialView="dayGridMonth"
-        events={[{ title: "Test Event", date: "2024-10-15"}]}
-        dateClick={handleDateClick}
-        height={"100%"}
-        />
+        <div className="p-6 h-full">
+            <FullCalendar 
+            plugins={[dayGridPlugin, InteractionPlugin]}
+            initialView="dayGridMonth"
+            events={[{ title: "Test Event", date: "2024-10-15"}]}
+            dateClick={handleDateClick}
+            height={"100%"}
+            />
+        </div>
     )
 }

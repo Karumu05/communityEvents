@@ -14,7 +14,7 @@ export default function Page() {
   }, []);
 
   return (
-    <div>
+    <div className="p-6">
       <section className="flex flex-row mx-5 mb-5 ">
         <h1 className="font-semibold uppercase text-black text-3xl">
           Upcoming Events
