@@ -34,7 +34,11 @@ export default function Home() {
           className="w-full h-full flex flex justify-center items-center"
         >
           <section className="bg-slate-200 rounded-lg p-5">
-            {/* Insert form here to log in */}
+            <a href="/api/auth/login">
+              <div className="bg-red-400 p-5 rounded-lg text-lg font-semibold hover:bg-red-500">
+                Login or Register here
+              </div>
+            </a>
           </section>
         </div>
       </section>

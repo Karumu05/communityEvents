@@ -1,9 +1,18 @@
+"use client"
 import Image from "next/image";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function Page() {
+
+const { user, error, isLoading } = useUser()
+
+
+
+
+
   return (
     <>
-      <div class="absolute top-0 w-3/4 h-1/4  bg-gradient-to-r from-red-400 "></div>
+      <div className="absolute top-0 w-3/4 h-1/4  bg-gradient-to-r from-red-400 "></div>
       <div className="grid grid-cols-2 grid-rows-3 gap-4 h-full pr-6 ">
         <div id="profilePic">
           <Image
@@ -11,6 +20,7 @@ export default function Page() {
             height={400}
             width={400}
             className="rounded-full md:mx-16 relative top-5 shadow-lg"
+            alt="Your Profile picture"
           />
         </div>
 

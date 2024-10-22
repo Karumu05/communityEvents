@@ -9,6 +9,10 @@ export default function Page() {
   const [eventData, setEventData] = useState({});
   const formattedDate = eventData.date?.match(/^[^T]*/);
 
+  function handleBuyTicket() {
+
+  }
+
   useEffect(() => {
     fetchEventsById(pathId).then((result) => {
       setEventData(result);
@@ -28,7 +32,7 @@ export default function Page() {
         </div>
 
         <div className="row-span-2 p-6">
-        <Image src={eventData.image} height={500} width={500} className="w-full h-full"/>
+        <Image src={eventData.image} height={500} width={500} className="w-full h-full rounded-lg shadow-lg"/>
         </div>
 
         <div className="bg-gray-200 mx-6 mt-6 rounded-lg flex flex-col   text-4xl ">
@@ -45,19 +49,20 @@ export default function Page() {
           <p className="p-6">{eventData.description}</p>
         </div>
 
-        <div className="bg-gray-200 m-6 rounded-lg">
-          <div className="mt-4">
+        <div className="bg-gray-200 mb-6 mx-6 rounded-lg flex flex-col justify-between p-6">
+
+          <div className="">
             <p className="text-3xl ">Attendees:</p>
             <ul className="list-disc ml-4">{/* List of attendees here */}</ul>
           </div>
 
-          <div className="mt-4">
+          <div className="">
             <p className="text-3xl ">Cost: ${eventData.cost}</p>
           </div>
 
-          <div className="mt-4">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Buy General Admission Ticket
+          <div className="flex justify-end">
+            <button  className="bg-red-400 hover:bg-red-700 text-white font-bold py-6 px-8 uppercase rounded">
+              Buy Ticket
             </button>
           </div>
         </div>

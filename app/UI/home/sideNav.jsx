@@ -1,5 +1,5 @@
 "use client"
-import { CalendarIcon, HomeIcon, UserIcon } from '@heroicons/react/24/solid'
+import { CalendarIcon, HomeIcon, UserIcon, ArrowRightEndOnRectangleIcon} from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
@@ -25,6 +25,12 @@ export default function SideNav() {
                 <Link href="/home/profile">
                     <UserIcon className='w-20 h-20'/>
                 </Link>
+            </div>
+
+            <div className='hover:opacity-50'>
+                <a href="/api/auth/logout">
+                    <ArrowRightEndOnRectangleIcon className='w-20 h-20'/>
+                </a>
             </div>
 
         </nav>
