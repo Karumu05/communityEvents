@@ -1,24 +1,11 @@
-"use client"
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid"
-import InteractionPlugin  from "@fullcalendar/interaction"
-
 export default function Page() {
 
-    const handleDateClick = (arg) => {
-            alert(arg.dateStr)
-    }
-
-
-    return (
-        <div className="p-6 h-full">
-            <FullCalendar 
-            plugins={[dayGridPlugin, InteractionPlugin]}
-            initialView="dayGridMonth"
-            events={[{ title: "Test Event", date: "2024-10-15"}]}
-            dateClick={handleDateClick}
-            height={"100%"}
-            />
-        </div>
-    )
+  return (
+    <div className="p-6 h-full">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=87cf6e9402a5daa96b3d95b34e11da82dca0f32709f38eda5f7bfd86223305be%40group.calendar.google.com&ctz=Europe%2FLondon"
+        className="h-full w-full"
+      ></iframe>
+    </div>
+  );
 }

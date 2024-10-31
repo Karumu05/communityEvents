@@ -1,7 +1,20 @@
+"use client";
+import { postUser } from "./lib/data";
 import CommunityELogo from "./UI/communityELogo";
 import { lusitana } from "./UI/fonts";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
+  if (user) {
+    redirect("/home");
+  }
+
   return (
     <main className="flex h-screen min-h-screen flex-col p-2">
       <header
