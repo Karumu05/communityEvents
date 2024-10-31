@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { fetchEvents } from "../lib/data";
 import EventCard from "../UI/home/eventCard";
 import Link from "next/link";
-import { Button } from "@nextui-org/react";
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import ButtonPerm from "../UI/home/buttonPerm";
 
@@ -32,13 +31,13 @@ export default function Page() {
           Upcoming Events
         </h1>
 
-        <Button
-          onPress={handlePress}
-          className="bg-red-300 hover:bg-red-500"
-          size="lg"
-        >
-          <PlusCircleIcon />
-        </Button>
+        <button type="button" onClick={handlePress} className="bg-red-300 p-2 rounded-xl hover:bg-red-400" >
+          Click here to add an event 
+        </button>
+        
+        
+        
+        
       </section>
 
       <section className="flex flex-row flex-wrap gap-6">
