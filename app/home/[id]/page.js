@@ -87,7 +87,7 @@ export default function Page() {
             {eventData?.atendees?.map((person) => {
               return (
                 <ul className="gap-2">
-                  <li>{person}</li>
+                  <li key={person}>{person}</li>
                 </ul>
               );
             })}
