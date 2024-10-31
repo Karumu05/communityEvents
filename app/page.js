@@ -1,11 +1,10 @@
 "use client";
-import { postUser } from "./lib/data";
+
 import CommunityELogo from "./UI/communityELogo";
-import { lusitana } from "./UI/fonts";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { redirect } from "next/navigation";
 
-export default function Home() {
+export default function Page() {
   const { user, error, isLoading } = useUser();
 
   if (isLoading) return <div>Loading...</div>;
@@ -18,7 +17,7 @@ export default function Home() {
   return (
     <main className="flex h-screen min-h-screen flex-col p-2">
       <header
-        className={`${lusitana.className} flex flex-col bg-red-400 w-full md:h-52 rounded-lg justify-end p-5`}
+        className={` flex flex-col bg-red-400 w-full md:h-52 rounded-lg justify-end p-5`}
       >
         <CommunityELogo />
       </header>
@@ -32,7 +31,7 @@ export default function Home() {
             <p className="leading-normal md:text-3xl">
               <strong>
                 Welcome to{" "}
-                <span className={` ${lusitana.className} text-red-400`}>
+                <span className={`  text-red-400`}>
                   {" "}
                   Community Events.
                 </span>{" "}
