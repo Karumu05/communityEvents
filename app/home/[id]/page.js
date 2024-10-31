@@ -84,7 +84,13 @@ export default function Page() {
         <div className="bg-gray-200 mb-6 mx-6 rounded-lg flex flex-col justify-between p-6">
           <div className="">
             <p className="text-3xl ">Attendees:</p>
-            <p className="test-2xl">{eventData.atendees}</p>
+            {eventData?.atendees?.map((person) => {
+              return (
+                <ul className="gap-2">
+                  <li>{person}</li>
+                </ul>
+              );
+            })}
           </div>
 
           <div className="">
