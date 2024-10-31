@@ -2,7 +2,7 @@ const EventCard = ({image, name, date}) => {
     return ( 
         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
         <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md">
-        <img className="h-64 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" src={image}></img>
+        <img className="h-64 w-full bg-gray-300 bg-center bg-cover rounded-lg shadow-md" src={image} alt={name}></img>
         </div>
         
         <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">

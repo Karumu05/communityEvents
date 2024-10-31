@@ -59,6 +59,7 @@ export default function Page() {
             const formattedDate = event?.date?.match(/^[^T]*/);
             return (
               <ProfileEventCard
+                key={event.title}
                 image={event.image}
                 name={event.title}
                 date={formattedDate}
