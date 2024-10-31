@@ -86,7 +86,7 @@ export default function Page() {
             <p className="text-3xl ">Attendees:</p>
             {eventData?.atendees?.map((person) => {
               return (
-                <ul className="gap-2">
+                <ul key={person} className="gap-2">
                   <li key={person}>{person}</li>
                 </ul>
               );
