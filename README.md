@@ -1,9 +1,11 @@
 ## Community Events
 
-Community Events is a web app which can be used to post events by staff, join them as users and add the events to their personal
-Google calendar.
+Community Events is a user-friendly web application designed to streamline event management and engagement. Staff can easily post upcoming events, while users can browse, join, and add events to their personal calendars.
 
-## Run the app locally
+Link to Project: https://community-events-one.vercel.app/
+
+
+## Run the app locally 
 
 To run community Events locally, please do the following:
 
