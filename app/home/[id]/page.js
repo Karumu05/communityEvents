@@ -72,7 +72,6 @@ export default function Page() {
           <div className="p-6 gap-4 justify-center">
             <p>Date: {formattedDate}</p>
             <p>Location: {eventData.location}</p>
-            <p>Total Tickets: {eventData.ticketAmount}</p>
           </div>
         </div>
 

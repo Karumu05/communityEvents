@@ -85,15 +85,6 @@ export default function Page() {
             required
           />
 
-          <label htmlFor="ticketAmount">Amount of Tickets:</label>
-          <input
-            type="number"
-            id="ticketAmount"
-            name="ticketAmount"
-            value={formData.ticketAmount}
-            onChange={handleChange}
-            required
-          />
 
           <label htmlFor="cost">Ticket Cost:</label>
           <input
